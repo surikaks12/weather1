@@ -1,1 +1,2 @@
-# weather1
+# A weather app for Android
+## By Surya Kakria
