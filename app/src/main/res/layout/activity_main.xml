@@ -7,29 +7,30 @@
     tools:context=".MainActivity">
 
     <ProgressBar
+        android:id="@+id/pb_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pb_loading"
         android:layout_centerInParent="true"
         android:visibility="gone">
 
     </ProgressBar>
 
     <RelativeLayout
+        android:id="@+id/rl_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
-        android:id="@+id/rl_main_layout">
+        android:visibility="visible">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_toolbar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:id="@+id/cv_toolbar"
             android:elevation="@dimen/padding_x_large">
+
             <RelativeLayout
+                android:id="@+id/rl_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/rl_toolbar"
                 android:background="@color/purple_200">
 
                 <androidx.cardview.widget.CardView
@@ -39,18 +40,18 @@
                     app:cardCornerRadius="@dimen/padding_small">
 
                     <EditText
+                        android:id="@+id/get_city_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/get_city_name"
-                        android:hint="@string/search_places"
+                        android:background="@color/white"
                         android:drawableStart="@drawable/ic_baseline_search_24"
                         android:drawablePadding="@dimen/padding_large"
+                        android:hint="@string/search_places"
                         android:imeOptions="actionSearch"
                         android:inputType="text"
                         android:paddingStart="@dimen/padding_large"
                         android:paddingEnd="@dimen/padding_large"
-                        android:textColor="@color/black"
-                        android:background="@color/white">
+                        android:textColor="@color/black">
 
                     </EditText>
 
@@ -62,35 +63,37 @@
         </androidx.cardview.widget.CardView>
 
         <RelativeLayout
+            android:id="@+id/rl_sub_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/cv_toolbar"
-            android:id="@+id/rl_sub_layout">
+            android:layout_below="@id/cv_toolbar">
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
+                    android:id="@+id/iv_weather_bg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:id="@+id/iv_weather_bg"
                     android:src="@drawable/snow_bg">
 
                 </ImageView>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_large"
                     android:layout_marginStart="@dimen/padding_x_large"
+                    android:layout_marginTop="@dimen/padding_large"
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_date_and_time"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_date_and_time"
-                        android:textSize="@dimen/text_large"
-                        android:text="@string/demo_date">
+                        android:text="@string/demo_date"
+                        android:textSize="@dimen/text_large">
 
                     </TextView>
 
@@ -101,27 +104,28 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_max_day_temp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_max_day_temp"
                             android:layout_weight="3"
-                            android:textColor="@color/white"
                             android:text="@string/day"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/text_large">
 
                         </TextView>
 
                         <TextView
+                            android:id="@+id/tv_min_day_temp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_min_day_temp"
                             android:layout_weight="1"
-                            android:textColor="@color/white"
                             android:text="@string/day"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/text_large">
 
                         </TextView>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -129,27 +133,28 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_temp"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_temp"
                             android:layout_weight="1"
-                            android:textColor="@color/white"
                             android:text="@string/main_temp"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/text_super_large">
 
                         </TextView>
 
                         <ImageView
+                            android:id="@+id/tv_weather_icon"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="@dimen/padding_large"
                             android:layout_marginEnd="@dimen/padding_large"
-                            android:id="@+id/tv_weather_icon"
                             android:src="@drawable/clear">
 
                         </ImageView>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -157,23 +162,23 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_feels_like"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_feels_like"
                             android:layout_weight="1"
-                            android:textColor="@color/white"
                             android:text="@string/feels_like"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/text_large">
 
                         </TextView>
 
                         <TextView
+                            android:id="@+id/tv_weather_type"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_weather_type"
                             android:layout_weight="3"
-                            android:textColor="@color/white"
                             android:text="@string/weather_type"
+                            android:textColor="@color/white"
                             android:textSize="@dimen/text_large">
 
                         </TextView>
@@ -192,8 +197,8 @@
                 android:layout_marginBottom="@dimen/padding_x_large"
                 android:elevation="@dimen/padding_x_small"
                 app:cardCornerRadius="@dimen/padding_large"
-                app:cardMaxElevation="@dimen/padding_x_small"
-                app:cardElevation="@dimen/padding_x_small">
+                app:cardElevation="@dimen/padding_x_small"
+                app:cardMaxElevation="@dimen/padding_x_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -201,25 +206,26 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/ll_main_bg_above"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/ll_main_bg_above"
                         android:layout_marginTop="0dp"
                         android:background="@drawable/snow_bg"
                         android:orientation="horizontal">
 
                         <RelativeLayout
+                            android:id="@+id/rl_pressure_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_pressure_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -230,40 +236,42 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_pressure"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_pressure"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
                             </LinearLayout>
                         </RelativeLayout>
+
                         <RelativeLayout
+                            android:id="@+id/rl_humidity_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_humidity_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -274,40 +282,42 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_humidity"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_humidity"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
                             </LinearLayout>
                         </RelativeLayout>
+
                         <RelativeLayout
+                            android:id="@+id/rl_wind_speed_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_wind_speed_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -318,51 +328,52 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_wind_speed"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_wind_speed"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
                             </LinearLayout>
                         </RelativeLayout>
-                        
+
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_main_bg_below"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/ll_main_bg_below"
                         android:layout_marginTop="0dp"
                         android:background="@drawable/snow_bg"
                         android:orientation="horizontal">
 
                         <RelativeLayout
+                            android:id="@+id/rl_sunrise_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_sunrise_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -373,40 +384,42 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_sunrise"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_sunrise"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
                             </LinearLayout>
                         </RelativeLayout>
+
                         <RelativeLayout
+                            android:id="@+id/rl_sunset_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_sunset_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -417,40 +430,42 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_sunset"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_sunset"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
                             </LinearLayout>
                         </RelativeLayout>
+
                         <RelativeLayout
+                            android:id="@+id/rl_wind_fahrenheit_wrapper"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:padding="@dimen/padding_x_small"
-                            android:id="@+id/rl_wind_fahrenheit_wrapper">
+                            android:padding="@dimen/padding_x_small">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
-                                android:padding="@dimen/padding_x_small"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:padding="@dimen/padding_x_small">
 
                                 <ImageView
                                     android:layout_width="25dp"
@@ -461,23 +476,23 @@
                                 </ImageView>
 
                                 <TextView
+                                    android:id="@+id/tv_temp_fahrenheit"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/tv_temp_fahrenheit"
-                                    android:textSize="@dimen/text_x_large"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_x_large">
 
                                 </TextView>
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="@dimen/text_medium"
                                     android:gravity="center"
+                                    android:text="@string/default_numbers"
                                     android:textColor="@color/white"
-                                    android:text="@string/default_numbers">
+                                    android:textSize="@dimen/text_medium">
 
                                 </TextView>
 
@@ -490,8 +505,6 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-
 
 
         </RelativeLayout>
