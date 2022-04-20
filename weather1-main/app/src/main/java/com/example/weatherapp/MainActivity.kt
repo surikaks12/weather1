@@ -9,6 +9,7 @@ import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         getCurrentLocation()
 
-        activityMainBinding.getCityName.setOnEditorActionListener { v, actionId, keyEvent ->
+        activityMainBinding.getCityName.setOnEditorActionListener({ v, actionId, keyEvent ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 getCityWeather(activityMainBinding.getCityName.text.toString())
                 val view = this.currentFocus
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             } else false
-        }
+        })
     }
 
     private fun getCityWeather(cityName: String) {
@@ -140,12 +141,12 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.tvDateAndTime.text = currentDate
         if (body != null) {
             activityMainBinding.tvMaxDayTemp.text =
-                "Day " + kelvinToCelcius(body.main.temp_max) + "°"
+                "Day " + kelvinToCelcius(body.main.temp_max) + "°C"
             activityMainBinding.tvMinDayTemp.text =
-                "Night " + kelvinToCelcius(body.main.temp_min) + "°"
-            activityMainBinding.tvTemp.text = "" + kelvinToCelcius(body.main.temp) + "°"
+                "Night " + kelvinToCelcius(body.main.temp_min) + "°C"
+            activityMainBinding.tvTemp.text = "" + kelvinToCelcius(body.main.temp) + "°C"
             activityMainBinding.tvFeelsLike.text =
-                "Feels like " + kelvinToCelcius(body.main.feels_like) + "°"
+                "Feels like " + kelvinToCelcius(body.main.feels_like) + "°C"
             activityMainBinding.tvWeatherType.text = body.weather[0].main
             activityMainBinding.tvSunrise.text = timeStampToLocalDate(body.sys.sunrise.toLong())
             activityMainBinding.tvSunset.text = timeStampToLocalDate(body.sys.sunset.toLong())
@@ -316,7 +317,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun kelvinToCelcius(temp: Double): Double {
         var intTemp = temp
-        intTemp.minus(273)
+        intTemp = intTemp.minus(273)
         return intTemp.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
     }
 

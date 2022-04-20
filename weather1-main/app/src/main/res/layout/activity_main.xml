@@ -252,7 +252,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/pressure"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
@@ -298,7 +298,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/humidity"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
@@ -344,7 +344,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/wind_speed"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
@@ -400,7 +400,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/sunrise"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
@@ -446,7 +446,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/sunset"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
@@ -492,7 +492,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/default_numbers"
+                                        android:text="@string/temperature_in_F"
                                         android:textColor="@color/white"
                                         android:textSize="@dimen/text_medium">
 
