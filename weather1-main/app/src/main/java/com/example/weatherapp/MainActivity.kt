@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         getCurrentLocation()
 
-        activityMainBinding.getCityName.setOnEditorActionListener({ v, actionId, keyEvent ->
+        activityMainBinding.getCityName.setOnEditorActionListener { v, actionId, keyEvent ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 getCityWeather(activityMainBinding.getCityName.text.toString())
                 val view = this.currentFocus
@@ -60,10 +60,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             } else false
-        })
+        }
     }
 
     private fun getCityWeather(cityName: String) {
+        println(cityName)
         activityMainBinding.pbLoading.visibility = View.VISIBLE
         WeatherApiUtilities.getApiInterface()?.getCityWeatherData(cityName, API_KEY)
             ?.enqueue(object : Callback<ModelClass> {
