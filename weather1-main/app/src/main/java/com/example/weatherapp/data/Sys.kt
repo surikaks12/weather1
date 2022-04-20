@@ -7,6 +7,6 @@ data class Sys(
     @SerializedName("id") val id: Int,
     @SerializedName("country") val country: String,
     @SerializedName("sunrise") val sunrise: Int,
-    @SerializedName("sunser") val sunset: Int
+    @SerializedName("sunset") val sunset: Int
 
 )
